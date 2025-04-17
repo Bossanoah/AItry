@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ShopEase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3498db',
+                        secondary: '#2c3e50',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white shadow-md fixed w-full top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-secondary">ShopEase</div>
+                
+                <!-- Desktop Navigation -->
+                <ul class="hidden md:flex space-x-6">
+                    <li><a href="index.html" class="text-gray-600 hover:text-primary transition">Home</a></li>
+                    <li><a href="about.html" class="text-gray-600 hover:text-primary transition">About</a></li>
+                    <li><a href="contact.html" class="text-primary font-semibold">Contact</a></li>
+                    <li><a href="blog.html" class="text-gray-600 hover:text-primary transition">Blog</a></li>
+                    <li><a href="index.html#cart" class="text-gray-600 hover:text-primary transition"><i class="fas fa-shopping-cart"></i></a></li>
+                </ul>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuButton" class="md:hidden text-gray-600 hover:text-primary transition" aria-label="Open menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white shadow-lg p-6 md:hidden">
+                <div class="flex justify-between items-center mb-8">
+                    <div class="text-2xl font-bold text-secondary">ShopEase</div>
+                    <button id="closeMenuButton" class="text-gray-600 hover:text-primary transition" aria-label="Close menu">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="mb-6">
+                    <div class="relative">
+                        <input type="text" placeholder="Search products..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary" aria-label="Search products">
+                        <button class="absolute right-3 top-2 text-gray-400 hover:text-primary" aria-label="Search">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Main Navigation -->
+                <ul class="space-y-4 mb-6">
+                    <li><a href="index.html" class="block text-gray-600 hover:text-primary transition">Home</a></li>
+                    <li><a href="about.html" class="block text-gray-600 hover:text-primary transition">About</a></li>
+                    <li><a href="contact.html" class="block text-primary font-semibold">Contact</a></li>
+                    <li><a href="blog.html" class="block text-gray-600 hover:text-primary transition">Blog</a></li>
+                </ul>
+
+                <!-- Account Section -->
+                <div class="mb-6">
+                    <h3 class="text-sm font-semibold text-gray-500 mb-2">Account</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="block text-gray-600 hover:text-primary transition"><i class="fas fa-user mr-2"></i> My Account</a></li>
+                        <li><a href="#" class="block text-gray-600 hover:text-primary transition"><i class="fas fa-heart mr-2"></i> Wishlist</a></li>
+                        <li><a href="#" class="block text-gray-600 hover:text-primary transition"><i class="fas fa-history mr-2"></i> Order History</a></li>
+                        <li><a href="#" class="block text-gray-600 hover:text-primary transition"><i class="fas fa-cog mr-2"></i> Settings</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cart Section -->
+                <div class="mb-6">
+                    <a href="index.html#cart" class="block text-gray-600 hover:text-primary transition">
+                        <i class="fas fa-shopping-cart mr-2"></i> Cart
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded-full ml-2">3</span>
+                    </a>
+                </div>
+
+                <!-- Language Selector -->
+                <div class="mb-6">
+                    <h3 class="text-sm font-semibold text-gray-500 mb-2">Language</h3>
+                    <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary" aria-label="Select language">
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                        <option value="de">Deutsch</option>
+                    </select>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-600 hover:text-primary transition"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <h1>Contact Us</h1>
+            <p>We're here to help and answer any questions you might have</p>
+        </section>
+
+        <section class="contact-info">
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Our Location</h3>
+                    <p>123 Business Street</p>
+                    <p>New York, NY 10001</p>
+                    <p>United States</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone Numbers</h3>
+                    <p>Main: (123) 456-7890</p>
+                    <p>Support: (123) 456-7891</p>
+                    <p>Fax: (123) 456-7892</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Addresses</h3>
+                    <p>General: info@shopease.com</p>
+                    <p>Support: support@shopease.com</p>
+                    <p>Sales: sales@shopease.com</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Business Hours</h3>
+                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    <p>Saturday: 10:00 AM - 4:00 PM</p>
+                    <p>Sunday: Closed</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form-section">
+            <div class="form-container">
+                <h2>Send Us a Message</h2>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="support">Technical Support</option>
+                            <option value="sales">Sales Question</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <h2>Find Us</h2>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2155710122!2d-73.9878448!3d40.7579887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1645555555555!5m2!1sen!2sus"
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How can I track my order?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can track your order by logging into your account and visiting the 'My Orders' section. You'll receive tracking information via email once your order ships.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is your return policy?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a 30-day return policy for most items. Items must be in their original condition with all tags attached. Please contact our support team for return instructions.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you offer international shipping?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we ship to most countries worldwide. Shipping costs and delivery times vary depending on the destination. You can check shipping options during checkout.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-secondary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="footer-section">
+                    <h3 class="text-xl font-semibold mb-4">About Us</h3>
+                    <p class="text-gray-300">ShopEase - Your trusted online shopping destination</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="text-xl font-semibold mb-4">Contact</h3>
+                    <p class="text-gray-300">Email: info@shopease.com</p>
+                    <p class="text-gray-300">Phone: (123) 456-7890</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+                    <div class="social-links flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-primary transition"><i class="fab fa-facebook text-2xl"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition"><i class="fab fa-twitter text-2xl"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition"><i class="fab fa-instagram text-2xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">&copy; 2024 ShopEase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+</body>
+</html> 

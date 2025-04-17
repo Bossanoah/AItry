@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - ShopEase</title>
+    <link rel="stylesheet" href="bl">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3498db',
+                        secondary: '#2c3e50',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white shadow-md fixed w-full top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-secondary">ShopEase</div>
+                
+                <!-- Desktop Navigation -->
+                <ul class="hidden md:flex space-x-6">
+                    <li><a href="index.html" class="text-gray-600 hover:text-primary transition">Home</a></li>
+                    <li><a href="about.html" class="text-gray-600 hover:text-primary transition">About</a></li>
+                    <li><a href="contact.html" class="text-gray-600 hover:text-primary transition">Contact</a></li>
+                    <li><a href="blog.html" class="text-primary font-semibold">Blog</a></li>
+                    <li><a href="index.html#cart" class="text-gray-600 hover:text-primary transition"><i class="fas fa-shopping-cart"></i></a></li>
+                </ul>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuButton" class="md:hidden text-gray-600 hover:text-primary transition" aria-label="Open menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white shadow-lg p-6 md:hidden">
+                <div class="flex justify-between items-center mb-8">
+                    <div class="text-2xl font-bold text-secondary">ShopEase</div>
+                    <button id="closeMenuButton" class="text-gray-600 hover:text-primary transition" aria-label="Close menu">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                <ul class="space-y-4">
+                    <li><a href="index.html" class="block text-gray-600 hover:text-primary transition">Home</a></li>
+                    <li><a href="about.html" class="block text-gray-600 hover:text-primary transition">About</a></li>
+                    <li><a href="contact.html" class="block text-gray-600 hover:text-primary transition">Contact</a></li>
+                    <li><a href="blog.html" class="block text-primary font-semibold">Blog</a></li>
+                    <li><a href="index.html#cart" class="block text-gray-600 hover:text-primary transition"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-24">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-r from-primary to-secondary text-white py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">ShopEase Blog</h1>
+                <p class="text-xl opacity-90">Discover the latest trends, tips, and insights</p>
+            </div>
+        </section>
+
+        <!-- Search and Filter Section -->
+        <section class="py-8 bg-white shadow-sm">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div class="w-full md:w-1/3">
+                        <div class="relative">
+                            <input type="text" id="searchInput" placeholder="Search articles..." 
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            <i class="fas fa-search absolute right-3 top-3 text-gray-400"></i>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <select id="categoryFilter" class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" aria-label="Filter by category">
+                            <option value="">All Categories</option>
+                            <option value="fashion">Fashion</option>
+                            <option value="technology">Technology</option>
+                            <option value="lifestyle">Lifestyle</option>
+                            <option value="business">Business</option>
+                        </select>
+                        <select id="sortFilter" class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" aria-label="Sort articles">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="popular">Most Popular</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Posts Grid -->
+        <section class="py-12">
+            <div class="container mx-auto px-4">
+                <div id="blogGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Blog posts will be dynamically loaded here -->
+                </div>
+                <div class="mt-12 text-center">
+                    <button id="loadMore" class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition">
+                        Load More Articles
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="bg-gray-100 py-12">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold text-secondary mb-4">Subscribe to Our Newsletter</h2>
+                <p class="text-gray-600 mb-8">Stay updated with our latest articles and offers</p>
+                <div class="max-w-md mx-auto">
+                    <form id="newsletterForm" class="flex gap-2">
+                        <input type="email" placeholder="Enter your email" required
+                            class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                        <button type="submit" class="px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-secondary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">ShopEase</h3>
+                    <p class="text-gray-300">Your trusted online shopping destination</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition">Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-white transition">About</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white transition">Contact</a></li>
+                        <li><a href="blog.html" class="text-gray-300 hover:text-white transition">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-300">Email: info@shopease.com</li>
+                        <li class="text-gray-300">Phone: (123) 456-7890</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-300">
+                <p>&copy; 2024 ShopEase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="blog.js"></script>
+    <script>
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+</body>
+</html> 

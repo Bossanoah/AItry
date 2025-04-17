@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About ShopEase - Your Trusted Shopping Partner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3498db',
+                        secondary: '#2c3e50',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white shadow-md fixed w-full top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-secondary">ShopEase</div>
+                
+                <!-- Desktop Navigation -->
+                <ul class="hidden md:flex space-x-6">
+                    <li><a href="index.html" class="text-gray-600 hover:text-primary transition">Home</a></li>
+                    <li><a href="about.html" class="text-primary font-semibold">About</a></li>
+                    <li><a href="contact.html" class="text-gray-600 hover:text-primary transition">Contact</a></li>
+                    <li><a href="blog.html" class="text-gray-600 hover:text-primary transition">Blog</a></li>
+                    <li><a href="index.html#cart" class="text-gray-600 hover:text-primary transition"><i class="fas fa-shopping-cart"></i></a></li>
+                </ul>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuButton" class="md:hidden text-gray-600 hover:text-primary transition" aria-label="Open menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white shadow-lg p-6 md:hidden">
+                <div class="flex justify-between items-center mb-8">
+                    <div class="text-2xl font-bold text-secondary">ShopEase</div>
+                    <button id="closeMenuButton" class="text-gray-600 hover:text-primary transition" aria-label="Close menu">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="mb-6">
+                    <div class="relative">
+                        <input type="text" placeholder="Search products..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary" aria-label="Search products">
+                        <button class="absolute right-3 top-2 text-gray-400 hover:text-primary" aria-label="Search">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Main Navigation -->
+                <ul class="space-y-4 mb-6">
+                    <li><a href="index.html" class="block text-gray-600 hover:text-primary transition">Home</a></li>
+                    <li><a href="about.html" class="block text-primary font-semibold">About</a></li>
+                    <li><a href="contact.html" class="block text-gray-600 hover:text-primary transition">Contact</a></li>
+                    <li><a href="blog.html" class="block text-gray-600 hover:text-primary transition">Blog</a></li>
+                </ul>
+
+                <!-- Account Section -->
+                <div class="mb-6">
+                    <h3 class="text-sm font-semibold text-gray-500 mb-2">Account</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="block text-gray-600 hover:text-primary transition"><i class="fas fa-user mr-2"></i> My Account</a></li>
+                        <li><a href="#" class="block text-gray-600 hover:text-primary transition"><i class="fas fa-heart mr-2"></i> Wishlist</a></li>
+                        <li><a href="#" class="block text-gray-600 hover:text-primary transition"><i class="fas fa-history mr-2"></i> Order History</a></li>
+                        <li><a href="#" class="block text-gray-600 hover:text-primary transition"><i class="fas fa-cog mr-2"></i> Settings</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cart Section -->
+                <div class="mb-6">
+                    <a href="index.html#cart" class="block text-gray-600 hover:text-primary transition">
+                        <i class="fas fa-shopping-cart mr-2"></i> Cart
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded-full ml-2">3</span>
+                    </a>
+                </div>
+
+                <!-- Language Selector -->
+                <div class="mb-6">
+                    <h3 class="text-sm font-semibold text-gray-500 mb-2">Language</h3>
+                    <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary" aria-label="Select language">
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                        <option value="de">Deutsch</option>
+                    </select>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-600 hover:text-primary transition"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-hero">
+            <h1>About ShopEase</h1>
+            <p>Your Trusted Shopping Partner Since 2024</p>
+        </section>
+
+        <section class="mission-vision">
+            <div class="mission">
+                <h2><i class="fas fa-bullseye"></i> Our Mission</h2>
+                <p>To provide a seamless shopping experience with quality products at competitive prices, while maintaining the highest standards of customer service.</p>
+            </div>
+            <div class="vision">
+                <h2><i class="fas fa-eye"></i> Our Vision</h2>
+                <p>To become the leading e-commerce platform that customers trust for all their shopping needs, known for reliability, quality, and exceptional service.</p>
+            </div>
+        </section>
+
+        <section class="values">
+            <h2>Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Trust</h3>
+                    <p>Building lasting relationships through transparency and reliability</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-star"></i>
+                    <h3>Quality</h3>
+                    <p>Delivering excellence in every product and service</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Customer Focus</h3>
+                    <p>Putting our customers at the heart of everything we do</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Innovation</h3>
+                    <p>Continuously improving to meet evolving needs</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="team">
+            <h2>Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="cafe.webp" alt="John Doe - CEO & Founder">
+                    <h3>John Doe</h3>
+                    <p class="position">CEO & Founder</p>
+                    <p class="bio">With over 15 years of experience in e-commerce, John leads our team with vision and passion.</p>
+                </div>
+                <div class="team-member">
+                    <img src="cafe2.webp" alt="Jane Smith - Head of Operations">
+                    <h3>Jane Smith</h3>
+                    <p class="position">Head of Operations</p>
+                    <p class="bio">Jane ensures smooth operations and excellent customer service across all channels.</p>
+                </div>
+                <div class="team-member">
+                    <img src="breakfast.jpg" alt="Mike Johnson - Product Manager">
+                    <h3>Mike Johnson</h3>
+                    <p class="position">Product Manager</p>
+                    <p class="bio">Mike curates our product selection to ensure quality and value for our customers.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"ShopEase has transformed my shopping experience. The quality of products and customer service is exceptional!"</p>
+                    <p class="customer-name">- Sarah M.</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Fast delivery and great prices. I'm a loyal customer for life!"</p>
+                    <p class="customer-name">- David R.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <h2>Join Our Community</h2>
+            <p>Be part of our growing family of satisfied customers</p>
+            <div class="cta-buttons">
+                <a href="index.html#products" class="cta-button">Shop Now</a>
+                <a href="#" class="cta-button secondary">Sign Up</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-secondary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="footer-section">
+                    <h3 class="text-xl font-semibold mb-4">About Us</h3>
+                    <p class="text-gray-300">ShopEase - Your trusted online shopping destination</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="text-xl font-semibold mb-4">Contact</h3>
+                    <p class="text-gray-300">Email: info@shopease.com</p>
+                    <p class="text-gray-300">Phone: (123) 456-7890</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+                    <div class="social-links flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-primary transition"><i class="fab fa-facebook text-2xl"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition"><i class="fab fa-twitter text-2xl"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition"><i class="fab fa-instagram text-2xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">&copy; 2024 ShopEase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+</body>
+</html> 

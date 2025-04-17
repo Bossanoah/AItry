@@ -1,0 +1,21 @@
+.c-item-image{
+    height: 480px;
+}
+
+.c-image{
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.1);
+}
+
+.carous-text{
+    color: black;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.carous1-text{
+    color: blanchedalmond;
+    font-weight: bolder;
+    font-size: larger;
+}

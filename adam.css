@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+.logo {
+    font-size: 24px;
+}
+.logo-colo {
+    color: #ff6347;
+}
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+.nav-links a {
+    color: black;
+    text-decoration: none;
+}
+
+.nav-links a:hover, a:active{
+    color:#ff6347;
+    font-size: larger;
+    text-decoration: underline;
+}
+
+
+.nav-buttons {
+    border-radius: 2px;
+    display: flex;
+    gap: 10px;
+}
+.nav-buttons button {
+    border-radius: 2px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+}
+@media (max-width: 768px) {
+    .nav-links, .nav-buttons {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+    .nav-links.active, .nav-buttons.active {
+        display: flex;
+    }
+    .hamburger {
+        display: flex;
+    }
+}
+.first-b{
+    background-color: white;
+    color: red;
+    border: 2px solid red;
+    
+}
+
+.second-b{
+    color: white;
+    background-color: red;
+    border: none;
+    
+}
+
+.container{
+    background-color: blue;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-evenly;
+
+}
+
+.item-left{
+    padding-left: 20px;
+    padding-top: 100px;
+    text-align: center;
+    background-color: grey;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+                                                                                                                                                                                                                                           
+h1{
+    text-align: left;
+    text-transform: capitalize;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+span{
+    color: #ff6347;
+}
+
+.side-image{
+    background-color: grey;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+img{
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    height: 100;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
